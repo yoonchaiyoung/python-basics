@@ -47,26 +47,9 @@ y = 20
 print('======= before swap ======')
 print(x, y)
 
-z = 20
+z = y
 y = x
 x = z
 print('======= after swap ======')
 print(x, y)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
