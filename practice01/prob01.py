@@ -35,4 +35,8 @@ else:
     else:
         print('3의 배수가 아닙니다.')
 
-
+# 다른 분 풀이
+# number =  input('수를 입력하세요:')
+# print(number.isnumeric())
+# 숫자면 true
+# 숫자가 아니면 false 출력됨.
