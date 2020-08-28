@@ -40,3 +40,17 @@ else:
 # print(number.isnumeric())
 # 숫자면 true
 # 숫자가 아니면 false 출력됨.
+
+
+
+
+# 교수님 풀이
+# import sys
+
+# number = input('수를 입력하세요:')
+
+# print(number, type(number))
+# number = int(number)
+# if number > 10:
+#     sys.exit()
+# print("ok")

@@ -6,6 +6,15 @@ if a > 5:
 else:
     print('small')
 
+# java, c, c++, javascrip (삼항 연산자)
+# print( a > 5 ? 'big' : 'small' )
+# 조건식 ? 참일때 출력할 것
+# 위 자바와 같은 언어들에서는 이렇게 항 3개 씀
+
+print('big' if a > 5 else 'small')
+
+
+
 
 # if ~ elif ~ elif ~ else
 n = 4

@@ -13,3 +13,6 @@ for number in l:
 print('주어진 리스트에서 3의 배수의 개수=>', multiple3count)
 print('주어진 리스트에서 3의 배수의 합=>', multiple3sum)
 
+# 교수님 풀이
+# for number in l:
+#     pass

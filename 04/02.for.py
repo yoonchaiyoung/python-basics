@@ -77,6 +77,8 @@ else: # 끝까지 9까지 가야지 else까지 옴
     print('\n-------------')
 
 print('\n----------------')
+
+# continue
 for n in range(10):
     if n <= 5:
         continue        # 이건 0부터 5까지는 출력이 안되고, 6부터 9까지 출력이 됨
