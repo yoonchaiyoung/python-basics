@@ -9,6 +9,7 @@ print(sys.getrefcount(x))
 
 y = x
 print(sys.getrefcount(x))
+print(globals())
 
 # reference 값 줄이기
 del x
