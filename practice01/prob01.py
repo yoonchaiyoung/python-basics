@@ -44,7 +44,7 @@ else:
 
 
 
-# 교수님 풀이
+# (교수님)
 # import sys
 
 # number = input('수를 입력하세요:')
