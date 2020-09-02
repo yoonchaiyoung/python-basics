@@ -27,8 +27,34 @@ pos = f.tell()
 print(pos)          # read 함수로 끝까지 다 읽었으니까 # 위치 : 37바이트
 
 
-# line 단위로 읽기
-open('fileio2.py', 'rt', encoding='utf-8')
+print('========= line 단위로 읽기 1 =============')
+linenum = 0
+f1 = open('04.fileio2.py', 'rt', encoding='utf-8')
+while True:
+    line = f1.readline()
+    if line =='':
+        f1.close()
+        break
+    linenum += 1
+    print(f'{linenum}:{line}', end='')
 
 
+print('========= line 단위로 읽기 2 =============')
+f2 = open('04.fileio2.py', 'rt', encoding='utf-8')
+lines = f2.readlines()
+f2.close()
+
+print(lines)
+
+
+for linenum, line in enumerate(lines):
+    print(f'{linenum+1}:{line}', end='')
+
+
+print('======== with ~ as (자원정리를 자동으로 해준다) ========')
+with open('04.fileio2.py', 'rt', encoding='utf-8') as f3:
+    lines = f3.readlines()
+    for linenum, line in enumerate(lines):
+        print(f'{linenum+1}:{line}', end='')
+# close를 따로 해주지 않아도 됨.
 
