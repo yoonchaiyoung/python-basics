@@ -21,6 +21,7 @@ def clean_string(strings):
         string = re.sub('[?!#*&$@]', '', string)
         # 처리 3
         string = string.title()
+
         results.append(string)
     return results
 
@@ -34,9 +35,9 @@ print(states)
 
 
 states = ['Alabama', 'Georgia!', 'Georgia ', 'georgia', 'FlOrIda', 'south carolina ', 'West virginia?']
-# data ===> data1 ===> data2 ===> data3
-#       f1         f2         f3
-def clean_string(strings, *funcs):          # 처리하고 싶은 함수를 튜플로 줘라. 그러면 수정 안해줘도 됨.
+# data ============> data0 ===> data2 ===> data3 ===> data4 ===> insight
+#       crawling           p_f2      p_f3        a_f1       a_f2
+def clean_strings(strings, *funcs):          # 처리하고 싶은 함수를 튜플로 줘라. 그러면 수정 안해줘도 됨.
                                             # 함수의 갯수가 정해져있지 않음
     results = []
     for s in strings:
@@ -47,39 +48,9 @@ def clean_string(strings, *funcs):          # 처리하고 싶은 함수를 튜�
 
 
 
-# def f1(a):
-#     r = str.strip(a)
-#     return r
-
-# clean_string(states, f1)
 
 
-# def strip(a):
-#     r = str.strip(a)
-#     return r
-# 굳이 필요 없음.
 
-def remove_special(a):
-    return re.sub('[?!#*&$@]', '', a)
-
-
-clean_string(states, str.strip, remove_special)
+states = clean_strings(states, str.strip, lambda x: re.sub('[?!#*&$@]', '', x), str.title)
 print(states)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
