@@ -18,3 +18,11 @@
 # You Love Football.
 
 # =================================================================================================================
+subs = ['I', 'You']
+verbs = ['Play', 'Love']
+objs = ['Hockey', 'Football']
+
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            print(subs[i], verbs[j], objs[k]+".")
