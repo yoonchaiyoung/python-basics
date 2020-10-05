@@ -8,6 +8,10 @@ print(a < 10)
 b = a > 1
 print(b, type(b))
 
+print(b, "isinstance bool ?", isinstance(b, bool)) # b는 Bool 객체의 인스턴스인가?
+print(b, "isinstance int ?", isinstance(b, int))   # b는 int의 인스턴스인가?
+print("bool의 부모:", bool.__bases__)  # bool 의 부모는 int
+
 print(b+1)
 print(b, type(b))
 
@@ -17,6 +21,9 @@ print(b + 1)
 print(True * False)
 
 # 다른 타입의 객체도 bool 타입으로 형반환이 가능하다.
+# bool(객체)
+# 값이 없다(비어있다)-> False
+# 값이 있다(내용물이 있다) -> True
 print(bool(10), bool(0))
 # 0만 F 이고 나머지는 다 T이다.
 

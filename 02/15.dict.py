@@ -1,4 +1,5 @@
 # 생성
+# 키 : 수정불가 객체여야 한다.
 d = {'basketball': 5, 'baseball': 9}
 print(d, type(d))
 
@@ -19,6 +20,7 @@ print(d4, type(d4))
 
 
 d5 = dict([('one', 1), ('two', 2), ('three', 3), ('four', 4)])
+# 키, 값 쌍튜플의 리스트
 print(d5, type(d5))
 # 리스트를 딕셔너리로 바꿔
 
@@ -41,7 +43,10 @@ print(len(d))
 # in, not in : key의 존재 여부만 가능
 print('soccer' in d)
 print('soccer' not in d)
-print('baseball' in d)
+print('baseball' in d)  # 'baseball' in d.keys()
+
+# 값의 존재 여부
+print("5 in values?", 5 in d.values())
 
 # 다양한 타입의 key를 사용할 수 있다.
 d6 = {}  # 공딕셔너리
@@ -63,6 +68,7 @@ print(d6)
 
 print("========= 객체함수 =========")
 # key 값 출력
+# keys() -> 일종의 set
 k = d6.keys()
 print(k, type(k))
 # key 값 순회
@@ -90,10 +96,13 @@ print(items)
 for item in items:
     print(item)
 
+for key, value in items:    # 튜플 언패킹
+    print(key, value)
+
 
 phones = {'마이콜':'000-0000-0000', '둘리':'111-1111-1111', '또치':'222-2222-2222'}
-print(phones['둘리'])
-print(phones.get('둘리'))
+print(phones['둘리'])     # 직접 키로 접근 -> 없는 키를 참조하는 경우 : Error
+print(phones.get('둘리')) # 없는 키 참조할 경우 -> None
 # get으로 하는 게 더 좋음.
 
 # print(phones['도우넛'])
@@ -106,13 +115,16 @@ if v is None:
 
 
 
-v = phones.setdefault('도우넛', '555-5555-5555')
+v = phones.setdefault('도우넛', '555-5555-5555')   # 키가 없으니 기본값 반환
 # 만약에 '도우넛'에 해당하는 value 값이 없다면
 # None 을 출력하는 것이 아닌
 # 555-5555-5555를 출력하고
 # 딕셔너리에
 # key를 '도우넛', value를 '555-5555-5555'를 추가해라.
 print(v)
+
+# get도 기본값 지원
+v = phones.get("고길동", "Not Found")
 
 v = phones.setdefault('둘리', '666-6666-6666')
 print(v)
@@ -126,39 +138,38 @@ v = phones.pop('둘리')
 print(v)
 print(phones)
 
-# popitem() : 삭제와 동시에 (키, 값) 가져온다.
+# popitem() : 삭제와 동시에 (키, 값) 튜플을 가져온다.
 # 근데 dictionary에는 순서(index)가 없기 때문에 뭘 가져올지는 모른다.
 item = phones.popitem()
 print(item)
 print(phones)
 # 도우넛이 빠져서 없어졌다.
 
-# clear()
+# clear() : 순차자료형 비우기
 phones.clear()
 print(phones)
 
 # 조회
 d7 = {'c':3, 'a':1, 'b':2}
 
-for key in d7:
+for key in d7:          # 기본적으로 사전의 키를 대상으로 루프
     print(key, end=' ')
 else:
     print('')
 # 딕셔너리에서 그냥 for 루프문 사용하면
 # key 값 꺼내짐
 
-for key in d7.keys():
+for key in d7.keys():   # 명시적으로 사전의 키목록 받은 후 루프
     print(key, end=' ')
 else:
     print('')
 # 동일한 결과 나옴
 
+for value in d7.values():   # 값 목록을 받은 후 루프
+    print(value, end=' ')
+else:
+    print('')
 
-for key, value in d7.items():
+
+for key, value in d7.items():   # (키, 값) 쌍튜플의 목록을 받은 후 루프
     print(key, value)
-
-
-
-
-
-
